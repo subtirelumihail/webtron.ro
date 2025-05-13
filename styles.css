@@ -122,6 +122,75 @@ a, button, input, textarea {
   transition: all 0.2s ease;
 }
 
+/* Tab functionality styling */
+.tab-button {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tab-button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.tab-button.active:before,
+.tab-button:hover:before {
+  width: 100%;
+}
+
+.tab-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add image hover effects */
+.service-image {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Stats counter styling */
+.counter {
+  display: inline-block;
+  position: relative;
+}
+
+.counter:after {
+  content: '+';
+  position: absolute;
+  font-size: 0.7em;
+  top: 0;
+  right: -0.4em;
+}
+
+/* Hero image animation */
+@keyframes float-image {
+  0% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
+.hero-image {
+  animation: float-image 6s ease-in-out infinite;
+}
+
 /* Add better mobile navigation handling */
 .mobile-menu-open {
   max-height: 1000px;
