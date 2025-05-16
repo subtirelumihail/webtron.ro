@@ -21,6 +21,7 @@
 /* Base styles */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Add padding to account for sticky header */
 }
 
 body {
@@ -30,6 +31,12 @@ body {
 /* Section animations */
 section {
   animation: fadeIn 0.8s ease-out;
+  padding-top: 2rem;
+}
+
+section h2 {
+  padding-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 /* Hero section enhancements */
@@ -209,7 +216,7 @@ a, button, input, textarea {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   .mobile-menu-backdrop {
     position: fixed;
     top: 0;
@@ -221,11 +228,11 @@ a, button, input, textarea {
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  
+
   .mobile-menu-backdrop.opacity-100 {
     opacity: 1;
   }
-  
+
   #mobileMenu {
     position: absolute;
     left: 0;
@@ -235,13 +242,16 @@ a, button, input, textarea {
     transform: translateY(-10px);
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
+    top: 100%;
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   #mobileMenu.mobile-menu-open {
     transform: translateY(0);
     opacity: 1;
   }
-  
+
   #mobileMenu a {
     display: block;
     padding: 15px;
@@ -250,7 +260,7 @@ a, button, input, textarea {
     position: relative;
     overflow: hidden;
   }
-  
+
   #mobileMenu a:hover, #mobileMenu a:active {
     background-color: rgba(59, 130, 246, 0.1);
   }
@@ -270,6 +280,12 @@ a, button, input, textarea {
   #mobileMenu a:hover:before {
     width: 100%;
   }
+
+  #mobileMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Sticky header styling */
@@ -277,15 +293,142 @@ header.sticky {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Enhance desktop navigation */
-@media (min-width: 640px) {
+/* Base header styles for all screen sizes */
+header {
+  width: 100%;
+}
+
+header .container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Ensure logo is aligned to the left */
+header nav > div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+/* Mobile-first approach for navigation */
+/* Hide desktop nav by default (on mobile) */
+header nav > div:nth-child(2) {
+  display: none;
+}
+
+/* Show it on medium screens and up */
+@media (min-width: 768px) {
+  header nav > div:nth-child(2) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Hide mobile menu and button on desktop */
+  #mobileMenu,
+  #mobileMenuButton {
+    display: none !important;
+  }
+}
+
+/* Base navigation styles */
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li a {
+  display: block;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/* Additional mobile adjustments */
+@media (max-width: 480px) {
+  header nav {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  header nav ul {
+    margin-left: 0;
+  }
+
+  header nav ul li a {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* Enhance desktop & tablet navigation */
+@media (min-width: 768px) {
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   header nav a {
     position: relative;
     font-weight: 500;
+    padding: 0.5rem 0.75rem;
   }
-  
+
+  header nav a:hover {
+    color: #BFDBFE;
+    border-bottom-color: #60A5FA;
+  }
+
   header nav a.active {
     color: #BFDBFE;
     border-bottom-color: #60A5FA !important;
   }
-} 
+
+  header .container {
+    margin: 0 auto;
+  }
+
+  /* Make sure desktop nav is visible at correct breakpoints */
+  header nav > div:nth-child(2) {
+    display: flex !important;
+  }
+}
+
+#mobileMenuButton {
+  position: relative;
+  z-index: 20;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.desktop-nav {
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+}
+
+/* Logo styling */
+header .logo-container img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 220px;
+}
+
+@media (max-width: 480px) {
+  header .logo-container img {
+    height: 32px;
+  }
+}

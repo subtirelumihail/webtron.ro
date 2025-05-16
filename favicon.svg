@@ -3,4 +3,4 @@
   <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">W</text>
   <circle cx="48" cy="20" r="8" fill="#4338CA"/>
   <path d="M48 14 L52 20 L48 26 L44 20 Z" fill="#60A5FA"/>
-</svg> 
+</svg>
