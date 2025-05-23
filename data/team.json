@@ -3,16 +3,23 @@
     {
       "name": "Mihail Subtirelu",
       "role": "Fullstack AI Developer",
-      "description": "Fullstack developer with a passion for building scalable and efficient solutions.",
+      "description": "Senior software architect specializing in distributed systems and microservices, with expertise in implementing AI-enhanced cloud solutions. Masters modern JavaScript frameworks and serverless architectures.",
       "image": "https://media.licdn.com/dms/image/v2/D4D03AQFFjndAHcjnIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680771057678?e=1753315200&v=beta&t=gi7bzJHrIJ3tjsgGR6YJrUyURESO7AXI5Fb1v3lbyfk",
       "linkedin": "https://www.linkedin.com/in/subtirelu-mihail-4660836b/"
     },
     {
       "name": "Mihai Babet",
       "role": "Fullstack AI Developer",
-      "description": "Fullstack developer with a passion for building scalable and efficient solutions.",
+      "description": "Fullstack specialist with deep expertise in high-performance computing and real-time systems. Skilled in developing scalable APIs and integrating intelligent data processing pipelines.",
       "image": "https://media.licdn.com/dms/image/v2/D4D03AQFtxSUr8MI9Qw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719064365629?e=1753315200&v=beta&t=sNrBd9Efik3VlhPh_-vb9NEBW5npKe5TOadya5KV4PA",
       "linkedin": "https://www.linkedin.com/in/mihai-babet/"
+    },
+    {
+      "name": "Adrian Staniloiu",
+      "role": "Fullstack AI Developer",
+      "description": "Fullstack expert focused on building responsive and interactive web applications. Specializes in state management and creating intelligent user interfaces that adapt to user behavior.",
+      "image": "https://media.licdn.com/dms/image/v2/C4D03AQGAptLCJCU2tw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1659630629381?e=1753315200&v=beta&t=5Gnb3RQ0MGCFQ4uKV3dtoW-pQjUH2iAbaup6pQYeeuU",
+      "linkedin": "https://www.linkedin.com/in/adrianstaniloiu/"
     },
     {
       "name": "Lucian Popa",

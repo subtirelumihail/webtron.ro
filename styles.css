@@ -207,7 +207,7 @@ a, button, input, textarea {
   position: absolute;
   font-size: 0.7em;
   top: 0;
-  right: -0.4em;
+  right: -20px;
 }
 
 /* Hero image animation */
@@ -308,7 +308,7 @@ a, button, input, textarea {
     margin-left: auto;
     padding-right: 0;
   }
-  
+
   /* Ensure the header is properly spaced when showing only the logo */
   header nav {
     padding: 0.25rem 0;
@@ -463,7 +463,7 @@ header .logo-container img {
     display: flex;
     align-items: center;
   }
-  
+
   header .logo-container a {
     display: flex;
     align-items: center;
@@ -490,27 +490,27 @@ header .logo-container img {
   .company-name {
     display: none;
   }
-  
+
   header .logo-container img {
     height: 43px;
   }
-  
+
   header .logo-container {
     display: flex;
     justify-content: flex-start;
   }
-  
+
   #mobileMenuButton {
     margin-left: auto;
     padding-right: 0;
   }
-  
+
   /* Ensure proper spacing in header on small screens */
   header nav {
     padding: 0.25rem 0;
     justify-content: space-between;
   }
-  
+
   header .container {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
