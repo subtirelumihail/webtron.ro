@@ -70,24 +70,25 @@
                 <div class="text-2xl font-bold z-10 logo-container">
                     <a href="/" style="display: flex; align-items: center; gap: 10px;" class="text-white hover:text-blue-200 transition">
                         <img src="logo.svg" alt="Webtron Future Solutions" onerror="this.onerror=null; this.src='logo-simple.svg'; if(this.src.includes('logo-simple.svg')) this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='block';}">
-                        <span>Webtron Future Solutions</span>
+                        <span class="company-name">Webtron Future Solutions</span>
                     </a>
                 </div>
 
                 <!-- Desktop & Tablet Navigation -->
                 <div class="desktop-nav hidden md:flex">
                     <ul class="flex space-x-4 md:space-x-6 lg:space-x-8">
-                        <li><a href="#services" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300">Services</a></li>
-                        <li><a href="#about" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300">About</a></li>
-                        <li><a href="#tech" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300">Tech</a></li>
-                        <li><a href="#rapid-delivery" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300">POC & MVP</a></li>
-                        <li><a href="#contact" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300">Contact</a></li>
+                      <li><a href="#services" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Services</a></li>
+                      <li><a href="#about" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">About</a></li>
+                        <li><a href="#tech" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Tech</a></li>
+                        <li><a href="#rapid-delivery" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Our Process</a></li>
+                        <li><a href="/team.html" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Team</a></li>
+                        <li><a href="#contact" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Mobile Menu Button (only on mobile) -->
-                <button id="mobileMenuButton" aria-label="Toggle mobile menu" class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-blue-300 p-2 rounded transition duration-300 hover:bg-blue-800 z-20">
-                    <div class="w-6 h-6 flex flex-col justify-between">
+                <button id="mobileMenuButton" aria-label="Toggle mobile menu" class="md:hidden text-white focus:outline-none focus:ring-0 p-2 rounded transition duration-300 hover:bg-blue-800 z-20">
+                    <div class="w-7 h-7 flex flex-col justify-between">
                         <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
                         <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
                         <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
@@ -98,11 +99,12 @@
             <!-- Mobile Navigation Menu (only on mobile) -->
             <div id="mobileMenu" class="hidden md:hidden pb-2 rounded-lg bg-blue-800 shadow-xl overflow-hidden">
                 <ul class="flex flex-col">
-                    <li><a href="#services" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700">Services</a></li>
-                    <li><a href="#about" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700">About</a></li>
-                    <li><a href="#tech" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700">Tech</a></li>
-                    <li><a href="#rapid-delivery" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700">POC & MVP</a></li>
-                    <li><a href="#contact" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300">Contact</a></li>
+                    <li><a href="#services" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Services</a></li>
+                    <li><a href="#about" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">About</a></li>
+                    <li><a href="#tech" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Tech</a></li>
+                    <li><a href="#rapid-delivery" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">POC & MVP</a></li>
+                    <li><a href="/team.html" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Team</a></li>
+                    <li><a href="#contact" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 focus:outline-none">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -174,10 +176,10 @@
 
                     <!-- Tab navigation -->
                     <div class="flex flex-wrap justify-center mb-6">
-                        <button class="tab-button active m-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors" data-tab="web">Web Development</button>
-                        <button class="tab-button m-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors" data-tab="mobile">Mobile Applications</button>
-                        <button class="tab-button m-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors" data-tab="hybrid">Hybrid Solutions</button>
-                        <button class="tab-button m-1 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors" data-tab="qa">QA Automation</button>
+                        <button class="tab-button active m-1 px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-0" data-tab="web">Web Development</button>
+                        <button class="tab-button m-1 px-5 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors focus:outline-none focus:ring-0" data-tab="mobile">Mobile Applications</button>
+                        <button class="tab-button m-1 px-5 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors focus:outline-none focus:ring-0" data-tab="hybrid">Hybrid Solutions</button>
+                        <button class="tab-button m-1 px-5 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors focus:outline-none focus:ring-0" data-tab="qa">QA Automation</button>
                     </div>
 
                     <!-- Tab content -->
@@ -351,8 +353,8 @@
                             <div class="font-medium">GoLang</div>
                         </div>
                         <div class="p-4 tech-icon">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" alt="Rust" class="w-16 h-16 mx-auto mb-3" />
-                            <div class="font-medium">Rust</div>
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-16 h-16 mx-auto mb-3" />
+                            <div class="font-medium">Python</div>
                         </div>
                     </div>
 
@@ -396,14 +398,14 @@
                         </div>
                         <div class="md:w-1/2">
                             <div class="bg-white p-5 rounded-lg shadow-xl border-l-4 border-blue-500">
-                                <h4 class="text-xl font-semibold mb-3">POC Technical Framework</h4>
+                                <!-- <h4 class="text-xl font-semibold mb-3">POC Technical Framework</h4> -->
                                 <div class="poc-schema-container">
                                     <!-- Technical POC Process Schema -->
                                     <div class="flex flex-col">
                                         <!-- Phase 1 -->
                                         <div class="poc-phase flex items-start mb-2">
                                             <div class="poc-phase-num bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 shadow-sm">1</div>
-                                            <div class="poc-phase-content ml-3 border-l-2 border-blue-200 pl-3">
+                                            <div class="poc-phase-content ml-3 border-blue-200 pl-3">
                                                 <h5 class="font-semibold text-blue-600 mb-0.5">Requirements Analysis</h5>
                                                 <p class="text-gray-600 text-sm">Identify core functionality and technical constraints</p>
                                             </div>
@@ -417,7 +419,7 @@
                                         <!-- Phase 2 -->
                                         <div class="poc-phase flex items-start mb-2">
                                             <div class="poc-phase-num bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 shadow-sm">2</div>
-                                            <div class="poc-phase-content ml-3 border-l-2 border-blue-200 pl-3">
+                                            <div class="poc-phase-content ml-3 border-blue-200 pl-3">
                                                 <h5 class="font-semibold text-blue-600 mb-0.5">Architecture Design</h5>
                                                 <p class="text-gray-600 text-sm">API specifications, system interfaces, data models</p>
                                             </div>
@@ -431,7 +433,7 @@
                                         <!-- Phase 3 -->
                                         <div class="poc-phase flex items-start mb-2">
                                             <div class="poc-phase-num bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 shadow-sm">3</div>
-                                            <div class="poc-phase-content ml-3 border-l-2 border-blue-200 pl-3">
+                                            <div class="poc-phase-content ml-3 border-blue-200 pl-3">
                                                 <h5 class="font-semibold text-blue-600 mb-0.5">Development & Integration</h5>
                                                 <p class="text-gray-600 text-sm">Core module implementation, 3rd party API integration</p>
                                             </div>
@@ -445,7 +447,7 @@
                                         <!-- Phase 4 -->
                                         <div class="poc-phase flex items-start">
                                             <div class="poc-phase-num bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0 shadow-sm">4</div>
-                                            <div class="poc-phase-content ml-3 border-l-2 border-blue-200 pl-3">
+                                            <div class="poc-phase-content ml-3 border-blue-200 pl-3">
                                                 <h5 class="font-semibold text-blue-600 mb-0.5">Validation & Documentation</h5>
                                                 <p class="text-gray-600 text-sm">Performance metrics, scalability assessment, tech docs</p>
                                             </div>
@@ -490,7 +492,7 @@
                         </div>
                         <div class="md:w-1/2">
                             <div class="bg-white p-5 rounded-lg shadow-xl border-l-4 border-blue-500 mb-6">
-                                <h4 class="text-xl font-semibold mb-3">MVP Technical Architecture</h4>
+                                <!-- <h4 class="text-xl font-semibold mb-3">MVP Technical Architecture</h4> -->
                                 <div class="mvp-schema-container relative">
                                     <div class="mvp-components-diagram grid grid-cols-3 gap-3 mb-3">
                                         <!-- Core Features Box -->
@@ -549,7 +551,6 @@
                                     <span class="font-medium">Timeline: 6-10 weeks for market-ready solution</span>
                                 </div>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Collaborative MVP Development" class="rounded-lg shadow-xl w-full">
                         </div>
                     </div>
 
@@ -603,6 +604,10 @@
                         <h3 class="text-xl font-semibold mb-2">UI/UX Designers</h3>
                         <p class="text-gray-700">Creating intuitive, beautiful interfaces that engage users and deliver exceptional experiences.</p>
                     </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="/team.html" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 hover:bg-blue-700">Meet Our Team</a>
                 </div>
             </div>
         </section>
