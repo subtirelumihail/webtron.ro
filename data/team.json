@@ -1,0 +1,63 @@
+{
+  "teamMembers": [
+    {
+      "name": "Mihail Subtirelu",
+      "role": "Fullstack AI Developer",
+      "description": "Fullstack developer with a passion for building scalable and efficient solutions.",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQFFjndAHcjnIQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680771057678?e=1753315200&v=beta&t=gi7bzJHrIJ3tjsgGR6YJrUyURESO7AXI5Fb1v3lbyfk",
+      "linkedin": "https://www.linkedin.com/in/subtirelu-mihail-4660836b/"
+    },
+    {
+      "name": "Mihai Babet",
+      "role": "Fullstack AI Developer",
+      "description": "Fullstack developer with a passion for building scalable and efficient solutions.",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQFtxSUr8MI9Qw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719064365629?e=1753315200&v=beta&t=sNrBd9Efik3VlhPh_-vb9NEBW5npKe5TOadya5KV4PA",
+      "linkedin": "https://www.linkedin.com/in/mihai-babet/"
+    },
+    {
+      "name": "Lucian Popa",
+      "role": "Account Manager & Project Manager",
+      "description": "Account Manager & Project Manager with a passion for building scalable and efficient solutions.",
+      "image": "https://media.licdn.com/dms/image/v2/C4D03AQGbspHiPe9euQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1548259413903?e=1753315200&v=beta&t=6PnO4UZzmMFnDs3-ANjUG-iu41m7W-1-9hiosgxsdMQ",
+      "linkedin": "https://www.linkedin.com/in/lucian-popa-4ba245156/"
+    },
+    {
+      "name": "Alexandru Nicolae",
+      "role": "Mobile Developer",
+      "description": "Mobile developer with a passion for building scalable and efficient solutions.",
+      "image": "https://media.licdn.com/dms/image/v2/D4E03AQGIi9pMSL2dsw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673268422816?e=1753315200&v=beta&t=fPWRppqSBGI7Ahjm_ypk7Qb4x76X1SDWOQ8rywp2FIw",
+      "linkedin": "https://www.linkedin.com/in/alexandru-nicolae-1ab703130/"
+    },
+    {
+      "name": "Marius Aldea",
+      "role": "QA Engineer",
+      "description": "QA Engineer with a passion for building scalable and efficient solutions.",
+      "image": "https://media.licdn.com/dms/image/v2/C4E03AQGzoHl1_-Qu6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1611143394124?e=1753315200&v=beta&t=5Q1Qou7gagh1Ah1wfY7VXWOXl1WInmg0xaz8c3l35uA",
+      "linkedin": "https://www.linkedin.com/in/marius-aldea-5932ba89/"
+    },
+    {
+      "name": "Aurelian Leu",
+      "role": "UI/UX Designer",
+      "description": "UI/UX Designer with a passion for building scalable and efficient solutions.",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQGLnXGX_-eMdw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724764607882?e=1753315200&v=beta&t=jP4MIC7geNYpVh3vLF3vDw9VZjTyovtdKXNmfErD32Q",
+      "linkedin": "https://www.linkedin.com/in/aurelianleu/"
+    }
+  ],
+  "expertise": [
+    {
+      "title": "Collaborative Innovation",
+      "description": "Our team works seamlessly together, combining diverse expertise to create comprehensive solutions.",
+      "icon": "M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+    },
+    {
+      "title": "Data-Driven Approach",
+      "description": "We leverage analytics and insights to make informed decisions and deliver measurable results.",
+      "icon": "M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
+    },
+    {
+      "title": "Continuous Learning",
+      "description": "We stay at the forefront of technology through constant learning and innovation.",
+      "icon": "M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
+    }
+  ]
+}
