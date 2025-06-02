@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See real-world integration examples from Webtron Future Solutions. Watch demonstrations of AI-powered file processing, email parsing automation, and seamless data integration workflows.">
+    <meta name="keywords" content="integration examples, AI automation, file processing, email parsing, workflow automation, data extraction, task management integration, Excel automation, Webtron">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Integration Examples - Webtron Future Solutions">
+    <meta property="og:description" content="Explore real integration examples showcasing AI-powered automation, file processing, email parsing, and seamless workflow integrations built by Webtron Future Solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webtron.ro/integrations">
+    <title>Integration Examples - AI Automation Demos | Webtron Future Solutions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-gray-900 antialiased">
+    <header class="sticky top-0 z-50 bg-gradient-to-r from-blue-900 to-indigo-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <div class="text-2xl font-bold z-10 logo-container">
+                    <a href="/" style="display: flex; align-items: center; gap: 10px;" class="text-white hover:text-blue-200 transition">
+                        <img src="logo.svg" alt="Webtron Future Solutions" onerror="this.onerror=null; this.src='logo-simple.svg'; if(this.src.includes('logo-simple.svg')) this.onerror=function(){this.style.display='none'; this.nextElementSibling.style.display='block';}">
+                        <span class="company-name">Webtron Future Solutions</span>
+                    </a>
+                </div>
+
+                <!-- Desktop & Tablet Navigation -->
+                <div class="desktop-nav hidden md:flex">
+                    <ul class="flex space-x-4 md:space-x-6 lg:space-x-8">
+                        <li><a href="/#services" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Services</a></li>
+                        <li><a href="/#about" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">About</a></li>
+                        <li><a href="/#tech" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Tech</a></li>
+                        <li><a href="/#rapid-delivery" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Our Process</a></li>
+                        <li><a href="/team" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Team</a></li>
+                        <li><a href="/integrations" class="font-medium py-2 px-2 md:px-3 text-blue-200 border-b-2 border-blue-300 transition duration-300 focus:outline-none">Integrations</a></li>
+                        <li><a href="/#contact" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuButton" aria-label="Toggle mobile menu" class="md:hidden text-white focus:outline-none focus:ring-0 p-2 rounded transition duration-300 hover:bg-blue-800 z-20">
+                    <div class="w-7 h-7 flex flex-col justify-between">
+                        <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
+                        <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
+                        <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
+                    </div>
+                </button>
+            </nav>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-2 rounded-lg bg-blue-800 shadow-xl overflow-hidden">
+                <ul class="flex flex-col">
+                    <li><a href="/#services" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Services</a></li>
+                    <li><a href="/#about" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">About</a></li>
+                    <li><a href="/#tech" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Tech</a></li>
+                    <li><a href="/#rapid-delivery" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">POC & MVP</a></li>
+                    <li><a href="/team" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Team</a></li>
+                    <li><a href="/integrations" class="block py-3 px-4 text-center font-medium bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Integrations</a></li>
+                    <li><a href="/#contact" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 focus:outline-none">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu-backdrop fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300 opacity-0"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-12 md:py-20 hero-gradient text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Integration Examples</h1>
+                    <p class="text-xl mb-8">See our AI-powered automation solutions in action. Watch real demonstrations of intelligent workflows that transform business processes.</p>
+                    <p class="text-lg opacity-90">From document processing to email automation, discover how our integrations streamline operations and boost productivity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Examples Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <!-- File Processing Integration -->
+                    <div class="mb-16">
+                        <div class="md:flex items-center gap-12">
+                            <div class="md:w-1/2 mb-8 md:mb-0">
+                                <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+                                    <video
+                                        controls
+                                        class="w-full h-auto"
+                                        poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    >
+                                        <source src="/videos/n8n_files.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2">
+                                <h2 class="text-3xl font-bold mb-4 text-gray-900">Intelligent File Processing</h2>
+                                <p class="text-lg text-gray-600 mb-6">Watch how our AI-powered system automatically processes uploaded files, extracts specific data points, and stores structured information in your database.</p>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 rounded-full p-1 mr-3 mt-1">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">Automated File Upload</h4>
+                                            <p class="text-gray-600">Drag and drop or select files for instant processing</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 rounded-full p-1 mr-3 mt-1">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">Smart Data Extraction</h4>
+                                            <p class="text-gray-600">AI identifies and extracts relevant data points automatically</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 rounded-full p-1 mr-3 mt-1">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">Seamless Database Integration</h4>
+                                            <p class="text-gray-600">Structured data is automatically stored in your systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email Order Processing Integration -->
+                    <div class="mb-16">
+                        <div class="md:flex items-center gap-12 flex-row-reverse">
+                            <div class="md:w-1/2 mb-8 md:mb-0">
+                                <div class="bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+                                    <video
+                                        controls
+                                        class="w-full h-auto"
+                                        poster="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    >
+                                        <source src="/videos/n8n_orders.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2">
+                                <h2 class="text-3xl font-bold mb-4 text-gray-900">Email Order Automation</h2>
+                                <p class="text-lg text-gray-600 mb-6">See how our system automatically processes incoming order emails, extracts order details, creates Excel reports, and manages tasks in your project management system.</p>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 rounded-full p-1 mr-3 mt-1">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">Email Parsing</h4>
+                                            <p class="text-gray-600">Automatically reads and extracts order information from emails</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 rounded-full p-1 mr-3 mt-1">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">Excel Report Generation</h4>
+                                            <p class="text-gray-600">Creates formatted Excel documents with order details</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 rounded-full p-1 mr-3 mt-1">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900">Task Management Integration</h4>
+                                            <p class="text-gray-600">Automatically creates tasks in your project management tools</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Automate Your Business Processes?</h3>
+                        <p class="text-lg mb-6 opacity-90">These examples represent just a fraction of what's possible with custom AI integrations. Let us build similar automation solutions tailored to your specific business needs.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="/#contact" class="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 hover:shadow-lg">
+                                Start Your Integration Project
+                            </a>
+                            <a href="/#services" class="inline-block bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 hover:bg-white hover:text-blue-600">
+                                Explore Our Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Used Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-8">Technologies Powering These Integrations</h2>
+                    <p class="text-lg text-gray-600 mb-12">Our integration solutions leverage cutting-edge technologies to deliver reliable, scalable automation workflows.</p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="bg-white rounded-lg p-4 shadow-md mb-3">
+                                <div class="w-12 h-12 mx-auto bg-red-500 rounded-lg flex items-center justify-center">
+                                    <span class="text-white font-bold text-lg">n8n</span>
+                                </div>
+                            </div>
+                            <h4 class="font-semibold">n8n Workflow</h4>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="bg-white rounded-lg p-4 shadow-md mb-3">
+                                <div class="w-12 h-12 mx-auto bg-black rounded-lg flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 19.7a6.0462 6.0462 0 0 0 8.9411-8.6789 5.9847 5.9847 0 0 0 .0809-1.0001zm-9.46 4.4422c-.307 0-.609-.0818-.875-.2363l-2.8748-1.6665-.7095.411 2.8748 1.6665c.6651.3842 1.4998.3842 2.165 0l2.8748-1.6665-.7095-.411-2.8748 1.6665c-.2667.1545-.568.2363-.875.2363z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4 class="font-semibold">AI & ML APIs</h4>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="bg-white rounded-lg p-4 shadow-md mb-3">
+                                <div class="w-12 h-12 mx-auto bg-blue-600 rounded-lg flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4 class="font-semibold">REST APIs</h4>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="bg-white rounded-lg p-4 shadow-md mb-3">
+                                <div class="w-12 h-12 mx-auto bg-orange-500 rounded-lg flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="#dd2c01" viewBox="0 0 24 24">
+                                        <path d="M5.803 21.303l2.87-16.905a.539.539 0 0 1 1.038-.175l2.701 4.809-6.609 12.271zm16.196-1.378L19.803 3.465a.54.54 0 0 0-.970-.18l-3.624 6.627-8.379 12.771 8.738 2.165a1.8 1.8 0 0 0 1.4-.24l5.031-3.683z"/>
+                                        <path d="M13.76 11.971l-2.701-4.809L8.673 4.398a.539.539 0 0 0-1.038.175L5.803 21.303l7.957-9.332z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h4 class="font-semibold">Cloud Storage</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">Webtron Future Solutions</h2>
+                    <p class="mt-2">Software & AI Development Company</p>
+                    <p class="mt-1">Bucharest, Romania</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Services</h3>
+                        <ul class="space-y-1">
+                            <li><a href="/#services" class="hover:text-blue-400 transition">AI Development</a></li>
+                            <li><a href="/#rapid-delivery" class="hover:text-blue-400 transition">POC & MVP Development</a></li>
+                            <li><a href="/#services" class="hover:text-blue-400 transition">Web Development</a></li>
+                            <li><a href="/#services" class="hover:text-blue-400 transition">Mobile Apps</a></li>
+                            <li><a href="/integrations" class="hover:text-blue-400 transition">Integrations</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Company</h3>
+                        <ul class="space-y-1">
+                            <li><a href="/#about" class="hover:text-blue-400 transition">About Us</a></li>
+                            <li><a href="/#about" class="hover:text-blue-400 transition">Our Mission</a></li>
+                            <li><a href="/team" class="hover:text-blue-400 transition">Our Team</a></li>
+                            <li><a href="/#contact" class="hover:text-blue-400 transition">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Connect</h3>
+                        <ul class="space-y-1">
+                            <li><a href="https://www.linkedin.com/company/webtron-future-solutions/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition" aria-label="LinkedIn">LinkedIn</a></li>
+                            <li><a href="#" class="hover:text-blue-400 transition" aria-label="Twitter">Twitter</a></li>
+                            <li><a href="#" class="hover:text-blue-400 transition" aria-label="Facebook">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-6 border-gray-700">
+
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="text-sm">
+                    &copy; 2025 Webtron Future Solutions S.R.L. All rights reserved.
+                </div>
+
+                <div class="flex justify-center md:justify-end mt-4 md:mt-0">
+                    <a href="https://www.linkedin.com/company/webtron-future-solutions/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition bg-gray-800 rounded-full p-2 mx-2 flex items-center justify-center h-10 w-10" aria-label="LinkedIn">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const menuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuBackdrop = document.querySelector('.mobile-menu-backdrop');
+            const mobileMenuItems = mobileMenu.querySelectorAll('a');
+
+            function toggleMenu() {
+                menuButton.classList.toggle('menu-button-active');
+
+                if (mobileMenu.classList.contains('hidden')) {
+                    // Open menu
+                    mobileMenu.classList.remove('hidden');
+                    menuBackdrop.classList.remove('hidden');
+
+                    setTimeout(() => {
+                        menuBackdrop.classList.remove('opacity-0');
+                        menuBackdrop.classList.add('opacity-100');
+                        mobileMenu.classList.add('mobile-menu-open');
+                        document.body.classList.add('overflow-hidden');
+                    }, 10);
+                } else {
+                    // Close menu
+                    menuBackdrop.classList.remove('opacity-100');
+                    menuBackdrop.classList.add('opacity-0');
+                    mobileMenu.classList.remove('mobile-menu-open');
+                    document.body.classList.remove('overflow-hidden');
+
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        menuBackdrop.classList.add('hidden');
+                    }, 300);
+                }
+            }
+
+            menuButton.addEventListener('click', toggleMenu);
+            menuBackdrop.addEventListener('click', toggleMenu);
+
+            // Close mobile menu when clicking a link
+            mobileMenuItems.forEach(item => {
+                item.addEventListener('click', toggleMenu);
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -16,6 +16,10 @@ app.get("/team", (req, res) => {
   res.sendFile(path.join(__dirname, "team.html"));
 });
 
+app.get("/integrations", (req, res) => {
+  res.sendFile(path.join(__dirname, "integrations.html"));
+});
+
 // Handle 404
 app.use((req, res) => {
   res.status(404).send("404 - Page Not Found");
