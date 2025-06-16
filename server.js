@@ -23,9 +23,9 @@ app.use((req, res) => {
 });
 
 // Routes
-app.get("/", (req, res) =>  res.render("index", translations));
-app.get("/team", (req, res) =>  res.render("team", translations));
-app.get("/integrations", (req, res) =>  res.render("integrations", translations));
+app.get("/", (req, res) =>  res.render("index", res.locals.translations));
+app.get("/team", (req, res) =>  res.render("team", res.locals.translations));
+app.get("/integrations", (req, res) =>  res.render("integrations", res.locals.translations));
 
 // Handle 404
 app.use((req, res) => {
