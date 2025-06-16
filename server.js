@@ -10,17 +10,9 @@ app.set('view engine', 'hbs');
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
-app.get("/team", (req, res) => {
-  res.sendFile(path.join(__dirname, "team.html"));
-});
-
-app.get("/integrations", (req, res) => {
-  res.sendFile(path.join(__dirname, "integrations.html"));
-});
+app.get("/", (req, res) =>  res.render("index"));
+app.get("/team", (req, res) =>  res.render("team"));
+app.get("/integrations", (req, res) =>  res.render("integrations"));
 
 // Handle 404
 app.use((req, res) => {
