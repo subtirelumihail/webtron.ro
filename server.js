@@ -1,5 +1,9 @@
 const express = require("express");
 const path = require("path");
+const translations = {
+  en: require("./translations/en.json"),
+  ro: require("./translations/ro.json")
+};
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,10 +13,19 @@ app.set('view engine', 'hbs');
 // Serve static files (CSS, JavaScript, images)
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
+
+// get device language
+app.use((req, res) => {
+  const language = req.headers["accept-language"].slice(",")[0];
+  res.locals.language = language;
+  res.locals.translations = translations[language] || translations.en;
+  next();
+});
+
 // Routes
-app.get("/", (req, res) =>  res.render("index"));
-app.get("/team", (req, res) =>  res.render("team"));
-app.get("/integrations", (req, res) =>  res.render("integrations"));
+app.get("/", (req, res) =>  res.render("index", translations));
+app.get("/team", (req, res) =>  res.render("team", translations));
+app.get("/integrations", (req, res) =>  res.render("integrations", translations));
 
 // Handle 404
 app.use((req, res) => {
