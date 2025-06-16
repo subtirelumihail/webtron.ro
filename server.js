@@ -15,7 +15,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 
 // get device language
-app.use((req, res) => {
+app.use((req, res, next) => {
   const language = req.headers["accept-language"].slice(",")[0];
   res.locals.language = language;
   res.locals.translations = translations[language] || translations.en;
