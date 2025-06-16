@@ -11,11 +11,11 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'hbs');
 
 // Serve static files (CSS, JavaScript, images)
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // get device language
-app.use((req, res) => {
+app.use((req, res, next) => {
   const language = req.headers["accept-language"]?.slice(0, 2);
   res.locals.language = language;
   res.locals.translations = translationsMap[language] || translationsMap.en;
