@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const translations = {
+const translationsMap = {
   en: require("./translations/en.json"),
   ro: require("./translations/ro.json")
 };
@@ -18,7 +18,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use((req, res) => {
   const language = req.headers["accept-language"]?.slice(0, 2);
   res.locals.language = language;
-  res.locals.translations = translations[language] || translations.en;
+  res.locals.translations = translationsMap[language] || translationsMap.en;
   next();
 });
 
