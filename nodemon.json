@@ -1,0 +1,6 @@
+{
+  "watch": ["data", "views", "public", "server.js"],
+  "ext": "js,json,hbs",
+  "ignore": ["node_modules"],
+  "exec": "node server.js"
+}
