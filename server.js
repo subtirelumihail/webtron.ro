@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   const language = req.headers["accept-language"]?.slice(0, 2);
   res.locals.language = language;
   
-  res.locals.data = _.merge(data.en, data[language]);
+  res.locals.data = data.ro //_.merge(data.en, data[language]);
   next();
 });
 
