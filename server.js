@@ -1,8 +1,10 @@
 const express = require("express");
 const path = require("path");
-const translationsMap = {
-  en: require("./translations/en.json"),
-  ro: require("./translations/ro.json")
+const _ = require("lodash");
+
+const data = {
+  en: require("./data/en.json"),
+  ro: require("./data/ro.json")
 };
 
 const app = express();
@@ -18,14 +20,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
   const language = req.headers["accept-language"]?.slice(0, 2);
   res.locals.language = language;
-  res.locals.translations = translationsMap[language] || translationsMap.en;
+  
+  res.locals.data = _.merge(data.en, data[language]);
   next();
 });
 
 // Routes
-app.get("/", (req, res) =>  res.render("index", res.locals.translations));
-app.get("/team", (req, res) =>  res.render("team", res.locals.translations));
-app.get("/integrations", (req, res) =>  res.render("integrations", res.locals.translations));
+app.get("/", (req, res) =>  res.render("index", res.locals.data));
+app.get("/team", (req, res) =>  res.render("team", res.locals.data));
+app.get("/integrations", (req, res) =>  res.render("integrations", res.locals.data));
 
 // Handle 404
 app.use((req, res) => {

@@ -1,0 +1,16 @@
+{
+  "expertise": [
+      {
+        "title": "Colaborare",
+        "description": "Echipa noastră lucrează în mod armonios, combinând diverse expertise pentru a crea soluții complete."
+       },
+      {
+        "title": "Analiză",
+        "description": "Utilizăm analize și informații pentru a lua decizii informate și pentru a livra rezultate măsurabile."
+      },
+      {
+        "title": "Inovație",
+        "description": "Rămânem la vârful tehnologiei prin învățare constantă și inovație."
+      }
+    ]
+}
