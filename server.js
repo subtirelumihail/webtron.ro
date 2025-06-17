@@ -16,7 +16,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// get device language
+// Get device language
 app.use((req, res, next) => {
   const language = req.headers["accept-language"]?.slice(0, 2);
   res.locals.language = language;
