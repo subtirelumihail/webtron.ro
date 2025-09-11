@@ -22,6 +22,25 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #google_translate_element .goog-te-gadget { color: transparent; }
+        #google_translate_element .goog-te-gadget .goog-te-combo { color: #fff; background: transparent !important; border: none !important; outline: none !important; box-shadow: none !important; }
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        .goog-te-gadget-simple { background-color: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+        body { top: 0 !important; }
+         a[href="https://translate.google.com"] { display: none !important; }
+        .goog-te-gadget {
+          display: flex;
+          font-size: 0 !important;
+        }
+        [class="skiptranslate"] {
+          display: none !important;
+        }
+        #mobileMenu #google_translate_container_mobile {
+          display: flex;
+          justify-content: center;
+        }
+    </style>
 </head>
 <body class="font-sans text-gray-900 antialiased">
     <header class="sticky top-0 z-50 bg-gradient-to-r from-blue-900 to-indigo-800 text-white shadow-lg">
@@ -47,6 +66,11 @@
                     </ul>
                 </div>
 
+                <div id="google_translate_container" class="hidden md:flex items-center ml-auto md:ml-4 bg-white bg-opacity-10 text-white rounded-full px-3 py-1 shadow border border-white border-opacity-20 gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3C7.031 3 3 7.031 3 12s4.031 9 9 9 9-4.031 9-9-4.031-9-9-9zm0 0c2.5 2.5 4 6 4 9s-1.5 6.5-4 9m0-18c-2.5 2.5-4 6-4 9s1.5 6.5 4 9M3.6 9h16.8M3.6 15h16.8"/></svg>
+                    <div id="google_translate_element"></div>
+                </div>
+
                 <!-- Mobile Menu Button -->
                 <button id="mobileMenuButton" aria-label="Toggle mobile menu" class="md:hidden text-white focus:outline-none focus:ring-0 p-2 rounded transition duration-300 hover:bg-blue-800 z-20">
                     <div class="w-7 h-7 flex flex-col justify-between">
@@ -60,6 +84,12 @@
             <!-- Mobile Navigation Menu -->
             <div id="mobileMenu" class="hidden md:hidden pb-2 rounded-lg bg-blue-800 shadow-xl overflow-hidden">
                 <ul class="flex flex-col">
+                    <li class="px-4 pt-3 pb-1">
+                        <div id="google_translate_container_mobile" class="flex items-center bg-white bg-opacity-10 text-white rounded-full px-3 py-1 shadow border border-white border-opacity-20 gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3C7.031 3 3 7.031 3 12s4.031 9 9 9 9-4.031 9-9-4.031-9-9-9zm0 0c2.5 2.5 4 6 4 9s-1.5 6.5-4 9m0-18c-2.5 2.5-4 6-4 9s1.5 6.5 4 9M3.6 9h16.8M3.6 15h16.8"/></svg>
+                            <div id="google_translate_mobile_slot"></div>
+                        </div>
+                    </li>
                     <li><a href="/#services" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Services</a></li>
                     <li><a href="/#about" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">About</a></li>
                     <li><a href="/#tech" class="block py-3 px-4 text-center font-medium hover:bg-blue-700 transition duration-300 border-b border-blue-700 focus:outline-none">Tech</a></li>
@@ -394,7 +424,98 @@
                     toggleMenu();
                 }
             });
+
+            // Move Google Translate into mobile menu on small screens
+            function moveTranslateElement() {
+                const element = document.getElementById('google_translate_element');
+                const mobileSlot = document.getElementById('google_translate_mobile_slot');
+                const headerContainer = document.getElementById('google_translate_container');
+                if (!element || !mobileSlot || !headerContainer) return;
+
+                if (window.innerWidth < 768) {
+                    if (element.parentElement !== mobileSlot) mobileSlot.appendChild(element);
+                } else {
+                    if (element.parentElement !== headerContainer) headerContainer.appendChild(element);
+                }
+            }
+            window.moveTranslateElement = moveTranslateElement;
+            moveTranslateElement();
+            window.addEventListener('resize', moveTranslateElement);
         });
+    </script>
+
+    <script>
+        (function() {
+            const supported = ['en','ro','de','fr','it','es','hu','bg','uk','ru','pl','pt'];
+
+            function setGoogleTransCookie(lang) {
+                const cookieValue = `/en/${lang}`;
+                const date = new Date();
+                date.setTime(date.getTime() + 365*24*60*60*1000);
+                document.cookie = `googtrans=${cookieValue}; expires=${date.toUTCString()}; path=/`;
+                document.cookie = `googtrans=${cookieValue}; domain=${location.hostname}; expires=${date.toUTCString()}; path=/`;
+            }
+
+            function initTranslate() {
+                if (!window.google || !google.translate || !google.translate.TranslateElement) {
+                    setTimeout(initTranslate, 150);
+                    return;
+                }
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: supported.join(','),
+                    autoDisplay: false
+                }, 'google_translate_element');
+                applyPreferredLanguage();
+                if (window.moveTranslateElement) window.moveTranslateElement();
+            }
+
+            function applyPreferredLanguage() {
+                const userLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0];
+                const langToUse = supported.includes(userLang) ? userLang : 'en';
+                const stored = localStorage.getItem('gt_lang');
+                const target = stored || langToUse;
+
+                if (target && target !== 'en') {
+                    setGoogleTransCookie(target);
+                }
+
+                const select = document.querySelector('#google_translate_element select');
+                if (!select) { setTimeout(applyPreferredLanguage, 150); return; }
+                select.style.color = '#fff';
+                select.style.backgroundColor = 'transparent';
+                select.style.border = 'none';
+                select.style.boxShadow = 'none';
+                select.style.height = '28px';
+                select.style.fontSize = '14px';
+                select.style.padding = '0';
+                select.style.cursor = 'pointer';
+
+                if (target && target !== 'en') {
+                    for (const option of select.options) {
+                        if (option.value.toLowerCase().includes(target)) {
+                            select.value = option.value;
+                            select.dispatchEvent(new Event('change'));
+                            localStorage.setItem('gt_lang', target);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', function() {
+                if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+                    initTranslate();
+                } else {
+                    window.__gtReady = initTranslate;
+                    const s = document.createElement('script');
+                    s.src = 'https://translate.google.com/translate_a/element.js?cb=__gtReady';
+                    s.async = true;
+                    s.defer = true;
+                    document.body.appendChild(s);
+                }
+            });
+        })();
     </script>
 </body>
 </html>
