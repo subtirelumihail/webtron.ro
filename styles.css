@@ -235,7 +235,7 @@ a, button, input, textarea {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1499px) {
   .mobile-menu-backdrop {
     position: fixed;
     top: 0;
@@ -346,8 +346,8 @@ header nav > div:nth-child(2) {
   display: none;
 }
 
-/* Show it on medium screens and up */
-@media (min-width: 768px) {
+/* Show it on very large screens and up */
+@media (min-width: 1500px) {
   header nav > div:nth-child(2) {
     display: flex;
     justify-content: flex-end;
@@ -416,9 +416,12 @@ header nav ul li a {
   header .container {
     margin: 0 auto;
   }
+}
 
-  /* Make sure desktop nav is visible at correct breakpoints */
-  header nav > div:nth-child(2) {
+@media (min-width: 1500px) {
+  /* Ensure desktop nav is visible only on very large screens */
+  header nav > div:nth-child(2),
+  .desktop-nav {
     display: flex !important;
   }
 }
@@ -439,7 +442,7 @@ header nav ul li a {
   justify-content: flex-end;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1500px) {
   .desktop-nav {
     display: flex !important;
   }
@@ -524,4 +527,17 @@ header .logo-container img {
   display: inline-block;
   font-weight: bold;
   font-size: 1.25rem;
+}
+
+/* Visibility rules for header elements based on 1500px breakpoint */
+@media (max-width: 1499px) {
+  #google_translate_container {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1500px) {
+  #google_translate_container {
+    display: flex !important;
+  }
 }

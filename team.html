@@ -40,6 +40,10 @@
           display: flex;
           justify-content: center;
         }
+        #google_translate_container {
+          min-width: 201px;
+          min-height: 46px;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-900 antialiased">
@@ -54,7 +58,7 @@
                 </div>
 
                 <!-- Desktop & Tablet Navigation -->
-                <div class="desktop-nav hidden md:flex">
+                <div class="desktop-nav hidden">
                     <ul class="flex space-x-4 md:space-x-6 lg:space-x-8">
                         <li><a href="/#services" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">Services</a></li>
                         <li><a href="/#about" class="font-medium py-2 px-2 md:px-3 hover:text-blue-200 border-b-2 border-transparent hover:border-blue-300 transition duration-300 focus:outline-none">About</a></li>
@@ -66,13 +70,13 @@
                     </ul>
                 </div>
 
-                 <div id="google_translate_container" class="hidden md:flex items-center ml-auto md:ml-4 bg-white bg-opacity-10 text-white rounded-full px-3 py-1 shadow border border-white border-opacity-20 gap-2">
+                 <div id="google_translate_container" class="hidden items-center ml-auto md:ml-4 bg-white bg-opacity-10 text-white rounded-full px-3 py-1 shadow border border-white border-opacity-20 gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3C7.031 3 3 7.031 3 12s4.031 9 9 9 9-4.031 9-9-4.031-9-9-9zm0 0c2.5 2.5 4 6 4 9s-1.5 6.5-4 9m0-18c-2.5 2.5-4 6-4 9s1.5 6.5 4 9M3.6 9h16.8M3.6 15h16.8"/></svg>
                     <div id="google_translate_element"></div>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuButton" aria-label="Toggle mobile menu" class="md:hidden text-white focus:outline-none focus:ring-0 p-2 rounded transition duration-300 hover:bg-blue-800 z-20">
+                <button id="mobileMenuButton" aria-label="Toggle mobile menu" class="text-white focus:outline-none focus:ring-0 p-2 rounded transition duration-300 hover:bg-blue-800 z-20">
                     <div class="w-7 h-7 flex flex-col justify-between">
                         <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
                         <span class="bg-current w-full h-0.5 rounded-full transition-all duration-300"></span>
@@ -82,7 +86,7 @@
             </nav>
 
             <!-- Mobile Navigation Menu -->
-            <div id="mobileMenu" class="hidden md:hidden pb-2 rounded-lg bg-blue-800 shadow-xl overflow-hidden">
+            <div id="mobileMenu" class="hidden pb-2 rounded-lg bg-blue-800 shadow-xl overflow-hidden">
                 <ul class="flex flex-col">
                     <li class="px-4 pt-3 pb-1">
                         <div id="google_translate_container_mobile" class="flex items-center bg-white bg-opacity-10 text-white rounded-full px-3 py-1 shadow border border-white border-opacity-20 gap-2">
@@ -382,8 +386,16 @@
 
             // Handle window resize
             window.addEventListener('resize', function() {
-                if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
-                    toggleMenu();
+                if (window.innerWidth >= 1500) {
+                    menuButton.classList.remove('menu-button-active');
+                    mobileMenu.classList.remove('mobile-menu-open');
+                    mobileMenu.classList.add('hidden');
+                    if (menuBackdrop) {
+                        menuBackdrop.classList.remove('opacity-100');
+                        menuBackdrop.classList.add('opacity-0');
+                        menuBackdrop.classList.add('hidden');
+                    }
+                    document.body.classList.remove('overflow-hidden');
                 }
             });
 
@@ -394,7 +406,7 @@
                 const headerContainer = document.getElementById('google_translate_container');
                 if (!element || !mobileSlot || !headerContainer) return;
 
-                if (window.innerWidth < 768) {
+                if (window.innerWidth < 1500) {
                     if (element.parentElement !== mobileSlot) mobileSlot.appendChild(element);
                 } else {
                     if (element.parentElement !== headerContainer) headerContainer.appendChild(element);
